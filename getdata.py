@@ -17,7 +17,7 @@ def retrieve() -> bool:
     return False
 
 
-def getData() -> bool:
+def refresh() -> bool:
     if os.path.exists("owid-covid-data.csv"):
         # don't refresh data that is less than a day old
         if time.time_ns() - os.stat("owid-covid-data.csv").st_mtime_ns > 864e13:
