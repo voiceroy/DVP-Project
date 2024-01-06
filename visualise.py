@@ -78,7 +78,7 @@ def plot_data(plot_details: dict):
 
     if plot_details["save"] is True:
         plt.savefig(
-            fname=title,
+            fname=title + ".png",
             format="png",
             bbox_inches="tight",
         )
