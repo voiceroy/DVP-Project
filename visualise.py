@@ -3,8 +3,6 @@ import getdata
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-df = pl.read_csv("owid-covid-data.csv")
-
 
 def get_input() -> dict:
     plot_details = {}
@@ -86,11 +84,14 @@ def plot_data(plot_details: dict):
     plt.show()
 
 
+
+
 if __name__ == "__main__":
     if not getdata.refresh():
         print("Could not retrieve data, exiting")
         exit(-1)
 
+    df = pl.read_csv("owid-covid-data.csv")
     plt.rcParams["figure.figsize"] = (16, 9)
     plot_details = get_input()
     plot_details = process_input(plot_details)
