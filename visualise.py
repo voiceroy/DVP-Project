@@ -84,8 +84,6 @@ def plot_data(plot_details: dict):
     plt.show()
 
 
-
-
 if __name__ == "__main__":
     if not getdata.refresh():
         print("Could not retrieve data, exiting")
