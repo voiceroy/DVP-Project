@@ -22,5 +22,7 @@ def refresh() -> bool:
         # don't refresh data that is less than a day old
         if time.time_ns() - os.stat("owid-covid-data.csv").st_mtime_ns > 864e13:
             return retrieve()
+        else:
+            return False
 
     return retrieve()
